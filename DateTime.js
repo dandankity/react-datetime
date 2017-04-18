@@ -45,7 +45,8 @@ var Datetime = React.createClass({
 			strictParsing: true,
 			closeOnSelect: false,
 			closeOnTab: true,
-			utc: false
+			utc: false,
+			viewMode: 'days'
 		};
 	},
 
