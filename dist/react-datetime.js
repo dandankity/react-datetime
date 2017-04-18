@@ -406,7 +406,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		openCalendar: function() {
 			if (!this.state.open) {
-				this.setState({ open: true, currentView: this.props.viewMode }, function() {
+				this.setState({ open: true, currentView: this.props.viewMode, viewDate: this.state.localMoment.clone() }, function() {
 					this.props.onFocus();
 				});
 			}
