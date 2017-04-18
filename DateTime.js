@@ -345,7 +345,7 @@ var Datetime = React.createClass({
 
 	openCalendar: function() {
 		if (!this.state.open) {
-			this.setState({ open: true, currentView: this.props.viewMode, viewDate: this.state.localMoment.clone() }, function() {
+			this.setState({ open: true, currentView: this.props.viewMode, viewDate: this.state.selectedDate.clone() }, function() {
 				this.props.onFocus();
 			});
 		}
