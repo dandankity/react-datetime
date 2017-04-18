@@ -344,7 +344,7 @@ var Datetime = React.createClass({
 
 	openCalendar: function() {
 		if (!this.state.open) {
-			this.setState({ open: true }, function() {
+			this.setState({ open: true, currentView: this.props.viewMode }, function() {
 				this.props.onFocus();
 			});
 		}
@@ -426,13 +426,13 @@ var Datetime = React.createClass({
 		return DOM.div({className: className}, children.concat(
 			DOM.div(
 				{ key: 'dt', className: 'rdtPicker' },
-				React.createElement( CalendarContainer, {view: this.props.viewMode, viewProps: this.getComponentProps(), onClickOutside: this.handleClickOutside })
+				React.createElement( CalendarContainer, {view: this.state.currentView, viewProps: this.getComponentProps(), onClickOutside: this.handleClickOutside })
 			)
 		));
 	}
 });
 
-// Make moment accessible through the Datetime class
+// Make moment accessible through the Datetime class fine
 Datetime.moment = moment;
 
 module.exports = Datetime;
