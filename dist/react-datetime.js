@@ -260,19 +260,16 @@ return /******/ (function(modules) { // webpackBootstrap
 			var value = e.target === null ? e : e.target.value,
 				localMoment = this.localMoment( value, this.state.inputFormat ),
 				update = { inputValue: value }
-			;
+				;
 
 			if ( localMoment.isValid() && !this.props.value ) {
 				update.selectedDate = localMoment;
 				update.viewDate = localMoment.clone().startOf('month');
-			}
-			else {
-				update.selectedDate = null;
-			}
 
-			return this.setState( update, function() {
-				return this.props.onChange( localMoment.isValid() ? localMoment : this.state.inputValue );
-			});
+				return this.setState( update, function() {
+					return this.props.onChange( localMoment.isValid() ? localMoment : this.state.inputValue );
+				});
+			}
 		},
 
 		onInputKey: function( e ) {
