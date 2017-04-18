@@ -487,7 +487,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			return DOM.div({className: className}, children.concat(
 				DOM.div(
 					{ key: 'dt', className: 'rdtPicker' },
-					React.createElement( CalendarContainer, {view: this.state.currentView, viewProps: this.getComponentProps(), onClickOutside: this.handleClickOutside })
+					React.createElement( CalendarContainer, {view: this.props.viewMode, viewProps: this.getComponentProps(), onClickOutside: this.handleClickOutside })
 				)
 			));
 		}
